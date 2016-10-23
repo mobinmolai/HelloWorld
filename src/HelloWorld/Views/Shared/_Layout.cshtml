@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Home page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello World! - @ViewBag.Title</title>
+    <link href="/_assets/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="sidebar">
+        <span>User's name</span>
+        <ul class="menu">
+            <!--We have used tag helpers of MVC below i.e. asp-controller and asp-action, but these will only work
+                if we enable MVC tag helpers. to do it we have to include a dependency in project json
+                After adding dependency in project.json we will need to include a special kind of view named _ViewImports.cshtml
+                under Views folder. Any thing imported in this view will get imported to all of the views and we don't
+                have to import certain things of every view
+            -->
+            <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
+            <li><a asp-controller="App" asp-action="About">About</a></li>
+            <li><a asp-contoller="App" asp-action="Contact">Contact</a></li>
+        </ul>
+    </div>
+    <div id="wrapper" class="wrapper">
+        <div id="main">
+            <div>
+                <button class="sidebarToggle">Toggle Menu</button>
+            </div>
+            @RenderBody()
+        </div>
+        <div id="footer">
+            &copy; Hello World!
+        </div>
+    </div>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    @RenderSection("scripts", false);
+    <script src="/_assets/js/site.js"></script>
+</body>
+</html>
