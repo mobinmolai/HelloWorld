@@ -13,11 +13,25 @@ namespace HelloWorld
 {
     public class Startup
     {
+        private IHostingEnvironment _env;
+
+        public Startup(IHostingEnvironment env)
+        {
+            _env = env;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IMailService, DebugMailService>();
+            if (_env.IsDevelopment())
+            {
+                services.AddSingleton<IMailService, DebugMailService>();
+            }
+            else
+            {
+                //Implement a real mail service
+            }
             services.AddMvc();
         }
 

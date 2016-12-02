@@ -6,6 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Hello World! - @ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" />
     <link href="/_assets/css/site.css" rel="stylesheet" />
 </head>
 <body>
@@ -26,7 +28,9 @@
     <div id="wrapper" class="wrapper">
         <div id="main">
             <div>
-                <button class="sidebarToggle">Toggle Menu</button>
+                <button class="sidebarToggle btn btn-primary">
+                    <i class="fa fa-angle-left"></i>
+                </button>
             </div>
             @RenderBody()
         </div>
@@ -35,7 +39,8 @@
         </div>
     </div>
     <script src="/lib/jquery/dist/jquery.min.js"></script>
-    @RenderSection("scripts", false);
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/_assets/js/site.js"></script>
+    @RenderSection("scripts", false);
 </body>
 </html>
