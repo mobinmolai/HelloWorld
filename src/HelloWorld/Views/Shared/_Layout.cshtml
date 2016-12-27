@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <title>Hello World! - @ViewBag.Title</title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
     <link href="/_assets/css/site.css" rel="stylesheet" />
 </head>
 <body>
@@ -18,7 +18,7 @@
                 if we enable MVC tag helpers. to do it we have to include a dependency in project json
                 After adding dependency in project.json we will need to include a special kind of view named _ViewImports.cshtml
                 under Views folder. Any thing imported in this view will get imported to all of the views and we don't
-                have to import certain things of every view
+                have to import certain things in every view
             -->
             <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
             <li><a asp-controller="App" asp-action="About">About</a></li>
