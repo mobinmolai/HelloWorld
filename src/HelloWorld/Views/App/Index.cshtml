@@ -4,8 +4,28 @@
     // if you want the page to automatically get a default layout then you could add 
     // another item under Views folder (not in any sub folder) named _ViewStart.cshtml and define the layout there
 }
-<form>
-    <div>
-        Hello World!!!!!
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Hello World!</h1>
+        <p>This will be fun site soon</p>
+        <form>
+            <div class="form-group">
+                <label>
+                    Date 
+                </label>
+                <input class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Location</label>
+                <input class="form-control" />
+            </div>
+            <div>
+                <button class="btn btn-success">Add</button>
+            </div>
+        </form>
     </div>
-</form>
+    <div class="col-md-6">
+        <h2>The map here</h2>
+    </div>
+</div>

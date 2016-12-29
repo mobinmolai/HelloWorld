@@ -1,8 +1,8 @@
 ﻿/*body { margin: 0; }
 label { font-weight: bold; display: block; }*/
 #wrapper { margin-left: 250px; -moz-transition: margin-left ease 0.25s; -o-transition: margin-left ease 0.25s; -webkit-transition: margin-left ease 0.25s; transition: margin-left ease 0.25s; }
-#main { background-color: #eee; padding: 4px; margin: 0; }
-#footer { background-color: #222; color: #eee; padding: 8px 5px; position: fixed; bottom: 0; width: 100%; }
+/*#main { background-color: #eee; padding: 4px; margin: 0; }
+#footer { background-color: #222; color: #eee; padding: 8px 5px; position: fixed; bottom: 0; width: 100%; }*/
 #sidebar { left: 0; overflow: hidden; height: 100%; position: fixed; width: 250px; background-color: #2a2c36; color: #eee; -moz-transition: left ease 0.25s; -o-transition: left ease 0.25s; -webkit-transition: left ease 0.25s; transition: left ease 0.25s; }
 ul.menu { font-size: 12px; }
 ul.menu li { list-style-type: none; }

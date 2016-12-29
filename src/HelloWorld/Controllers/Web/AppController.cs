@@ -1,4 +1,5 @@
-﻿using HelloWorld.Services;
+﻿using HelloWorld.Models;
+using HelloWorld.Services;
 using HelloWorld.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,14 +13,17 @@ namespace HelloWorld.Controllers.Web
     public class AppController : Controller
     {
         private IMailService _mailService;
+        private WorldContext _context;
 
         public AppController(IMailService mailService)
         {
             _mailService = mailService;
+            //_context = context;
         }
 
         public IActionResult Index()
         {
+            //var data = _context.Trips.ToList();
             return View();
         }
 
