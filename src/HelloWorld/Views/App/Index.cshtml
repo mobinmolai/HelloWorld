@@ -1,7 +1,8 @@
-﻿@{ 
+﻿@model IEnumerable<HelloWorld.Models.Trips>
+@{
     ViewBag.Title = "Home page";
     //Layout = "_Layout"; //you really don't need to specify Layout on every page
-    // if you want the page to automatically get a default layout then you could add 
+    // if you want the page to automatically get a default layout then you could add
     // another item under Views folder (not in any sub folder) named _ViewStart.cshtml and define the layout there
 }
 
@@ -12,7 +13,7 @@
         <form>
             <div class="form-group">
                 <label>
-                    Date 
+                    Date
                 </label>
                 <input class="form-control" />
             </div>
@@ -27,5 +28,9 @@
     </div>
     <div class="col-md-6">
         <h2>The map here</h2>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name</li>
+        }
     </div>
 </div>

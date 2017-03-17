@@ -43,12 +43,14 @@ namespace HelloWorld
             {
                 //Implement a real mail service
             }
-            services.AddDbContext<WorldContext>();
+            services.AddDbContext<HelloWorldContext>();
+            services.AddTransient<HelloWorldContextSeedData>();
+            services.AddLogging();
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, HelloWorldContextSeedData seeder)
         {
             loggerFactory.AddConsole();
 
@@ -68,6 +70,8 @@ namespace HelloWorld
                     defaults: new { controller = "App", action = "Index" }
                     );
             });
+
+            seeder.SeedData().Wait();
 
             //app.Run(async (context) =>
             //{

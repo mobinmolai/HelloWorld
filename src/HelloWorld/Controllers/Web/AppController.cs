@@ -13,18 +13,18 @@ namespace HelloWorld.Controllers.Web
     public class AppController : Controller
     {
         private IMailService _mailService;
-        private WorldContext _context;
+        private HelloWorldContext _context;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, HelloWorldContext context)
         {
             _mailService = mailService;
-            //_context = context;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            //var data = _context.Trips.ToList();
-            return View();
+            var data = _context.Trips.ToList();
+            return View(data);
         }
 
         public IActionResult Contact()
