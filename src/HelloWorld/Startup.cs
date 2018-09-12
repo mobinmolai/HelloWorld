@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using HelloWorld.Services;
 using HelloWorld.Models;
 using Microsoft.Extensions.Configuration;
+using AutoMapper;
 
 namespace HelloWorld
 {
@@ -53,6 +54,10 @@ namespace HelloWorld
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, HelloWorldContextSeedData seeder)
         {
             loggerFactory.AddConsole();
+            Mapper.Initialize(config =>
+            {
+                //config.CreateMap<Trips, TripsViewModel>().ReverseMap();
+            });
 
             if (env.IsDevelopment())
             {

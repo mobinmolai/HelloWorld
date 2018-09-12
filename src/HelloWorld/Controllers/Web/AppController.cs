@@ -1,6 +1,7 @@
 ﻿using HelloWorld.Models;
 using HelloWorld.Services;
 using HelloWorld.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,13 @@ namespace HelloWorld.Controllers.Web
         }
 
         public IActionResult Index()
+        {
+            //var data = _context.Trips.ToList();
+            return View();
+        }
+        
+        [Authorize]
+        public IActionResult Trips()
         {
             var data = _context.Trips.ToList();
             return View(data);

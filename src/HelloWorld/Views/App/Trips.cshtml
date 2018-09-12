@@ -10,7 +10,6 @@
     <div class="col-md-6">
         <h1>Hello World!</h1>
         <p>This will be fun site soon</p>
-        <a asp-controller="App" asp-action="trips" class="btn btn-lg btn-success">See Trips</a>
         <form>
             <div class="form-group">
                 <label>
@@ -26,16 +25,14 @@
                 <button class="btn btn-success">Add</button>
             </div>
         </form>
+        
     </div>
     <div class="col-md-6">
         <h2>The map here</h2>
         <ul>
-            @if (Model != null)
+            @foreach (var item in Model)
             {
-                @foreach (var item in Model)
-                {
-                    <li>@item.Name</li>
-                }
+                <li>@item.Name</li>
             }
         </ul>
     </div>

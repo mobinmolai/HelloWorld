@@ -4,10 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace HelloWorld.Models
 {
-    public class WorldContext: DbContext
+    public class WorldContext: IdentityDbContext<MyUser>
     {
         private IConfigurationRoot _config;
 
@@ -16,10 +17,6 @@ namespace HelloWorld.Models
         {
             _config = config;
         }
-
-        //public DbSet<Trip> Trips { get; set; }
-
-        //public DbSet<Stop> Stops { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
